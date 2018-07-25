@@ -10,6 +10,8 @@ setup(
   keywords = [], # arbitrary keywords
   classifiers = [],
   install_requires=[
-    'nbparameterise'
+    'findspark',
+    'pyspark',
+    'matplotlib'
   ]
 )
