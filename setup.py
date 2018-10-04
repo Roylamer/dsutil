@@ -12,6 +12,8 @@ setup(
   install_requires=[
     'findspark',
     'pyspark',
-    'matplotlib'
+    'matplotlib',
+    'astcheck',
+    'astsearch'
   ]
 )
