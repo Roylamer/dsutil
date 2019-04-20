@@ -5,7 +5,7 @@ import os
 import io
 
 
-def execute_nb(path, execute_dte):
+def execute_nb(path, **kwargs):
     # Reset python workspace
     chdir = '/'.join(os.path.abspath(path).split('/')[:-1])
     os.chdir(chdir)
@@ -18,7 +18,7 @@ def execute_nb(path, execute_dte):
 
 
     # Update the parameters and run the notebook
-    params = parameter_values(orig_parameters, execute_dte=execute_dte)
+    params = parameter_values(orig_parameters, **kwargs)
     new_nb = replace_definitions(nb, params)
 
     # Save results back to the notebook
@@ -26,7 +26,7 @@ def execute_nb(path, execute_dte):
         nbformat.write(new_nb, f)
 
 
-def execute_nb2(path, **kwargs):
+def execute_nb_airflow(path, **kwargs):
     # Reset python workspace
     chdir = '/'.join(os.path.abspath(path).split('/')[:-1])
     os.chdir(chdir)
