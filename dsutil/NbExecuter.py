@@ -26,7 +26,7 @@ def execute_nb(path, **kwargs):
         nbformat.write(new_nb, f)
 
 
-def execute_nb_airflow(path, **kwargs):
+def execute_nb2(path, **kwargs):
     # Reset python workspace
     chdir = '/'.join(os.path.abspath(path).split('/')[:-1])
     os.chdir(chdir)
